@@ -24,7 +24,7 @@
 
 ### Post
 
-![image](https://github.com/VanessaCristinaSilva/ac1arquiteturaweb/assets/115050243/7db5196b-2ae6-4b###4b-bc26-c687a0422da6)
+![image](https://github.com/VanessaCristinaSilva/ac1arquiteturaweb/assets/115050243/aaa6f357-0063-4f5e-9e12-1e6e8c4a8096)
 
 ### Put
 
