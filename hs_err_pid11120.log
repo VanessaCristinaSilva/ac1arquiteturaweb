@@ -1,0 +1,229 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 65011712 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3613), pid=11120, tid=2820
+#
+# JRE version:  (17.0.10+7) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17.0.10+7, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED -Dplugin.dir=C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\server\..\..\vscjava.vscode-gradle-3.13.5\server\plugins com.microsoft.java.bs.core.Launcher
+
+Host: Intel(R) Core(TM) i3-1005G1 CPU @ 1.20GHz, 4 cores, 3G,  Windows 11 , 64 bit Build 22621 (10.0.22621.3374)
+Time: Fri Apr 12 19:46:45 2024 Hora oficial do Brasil elapsed time: 0.034295 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000226c6b5bbb0):  JavaThread "Unknown thread" [_thread_in_vm, id=2820, stack(0x000000fbb4500000,0x000000fbb4600000)]
+
+Stack: [0x000000fbb4500000,0x000000fbb4600000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x67d2c9]
+V  [jvm.dll+0x834afa]
+V  [jvm.dll+0x8365be]
+V  [jvm.dll+0x836c23]
+V  [jvm.dll+0x2477ff]
+V  [jvm.dll+0x67a109]
+V  [jvm.dll+0x66eb7a]
+V  [jvm.dll+0x30764b]
+V  [jvm.dll+0x30eaf6]
+V  [jvm.dll+0x35e83e]
+V  [jvm.dll+0x35ea6f]
+V  [jvm.dll+0x2de248]
+V  [jvm.dll+0x2df1b4]
+V  [jvm.dll+0x806361]
+V  [jvm.dll+0x36c6f1]
+V  [jvm.dll+0x7e4e06]
+V  [jvm.dll+0x3eff3f]
+V  [jvm.dll+0x3f1b71]
+C  [jli.dll+0x528f]
+C  [ucrtbase.dll+0x29333]
+C  [KERNEL32.DLL+0x1257d]
+C  [ntdll.dll+0x5aa48]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffb4795ee98, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000226c6b960c0 GCTaskThread "GC Thread#0" [stack: 0x000000fbb4600000,0x000000fbb4700000] [id=8908]
+  0x00000226c6b9f8e0 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000fbb4700000,0x000000fbb4800000] [id=12040]
+  0x00000226c6ba0300 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000fbb4800000,0x000000fbb4900000] [id=9980]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffb4711ec87]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000226c6b55b90] Heap_lock - owner thread: 0x00000226c6b5bbb0
+
+Heap address: 0x00000000c3a00000, size: 966 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x00000000c3a00000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffb47506fb9]
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.022 Loaded shared library C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\jre\17.0.10-win32-x86_64\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff6096f0000 - 0x00007ff6096fe000 	C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\jre\17.0.10-win32-x86_64\bin\java.exe
+0x00007ffba6e70000 - 0x00007ffba7086000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffba5aa0000 - 0x00007ffba5b64000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffba4700000 - 0x00007ffba4aa7000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffba41c0000 - 0x00007ffba42d1000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffb70300000 - 0x00007ffb70317000 	C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\jre\17.0.10-win32-x86_64\bin\jli.dll
+0x00007ffba6ba0000 - 0x00007ffba6d4e000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffba4610000 - 0x00007ffba4636000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffba5030000 - 0x00007ffba5059000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffba44f0000 - 0x00007ffba4609000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffba4450000 - 0x00007ffba44ea000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffb689d0000 - 0x00007ffb689eb000 	C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\jre\17.0.10-win32-x86_64\bin\VCRUNTIME140.dll
+0x00007ffb91bb0000 - 0x00007ffb91e43000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3235_none_270f74e173860f98\COMCTL32.dll
+0x00007ffba5d20000 - 0x00007ffba5dc7000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffba51b0000 - 0x00007ffba51e1000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffb97460000 - 0x00007ffb9746c000 	C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\jre\17.0.10-win32-x86_64\bin\vcruntime140_1.dll
+0x00007ffb50b30000 - 0x00007ffb50bbd000 	C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\jre\17.0.10-win32-x86_64\bin\msvcp140.dll
+0x00007ffb46e30000 - 0x00007ffb47a92000 	C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\jre\17.0.10-win32-x86_64\bin\server\jvm.dll
+0x00007ffba59e0000 - 0x00007ffba5a92000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffba6860000 - 0x00007ffba6908000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffba4190000 - 0x00007ffba41b8000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ffba5710000 - 0x00007ffba5825000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffba4060000 - 0x00007ffba40ad000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffb738d0000 - 0x00007ffb738d9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffba5130000 - 0x00007ffba51a1000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffb9b360000 - 0x00007ffb9b394000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffb9adb0000 - 0x00007ffb9adba000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffba4040000 - 0x00007ffba4053000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffba31d0000 - 0x00007ffba31e8000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffb96790000 - 0x00007ffb9679a000 	C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\jre\17.0.10-win32-x86_64\bin\jimage.dll
+0x00007ffba1b10000 - 0x00007ffba1d43000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffba5380000 - 0x00007ffba5708000 	C:\WINDOWS\System32\combase.dll
+0x00007ffba6d50000 - 0x00007ffba6e27000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffb7c720000 - 0x00007ffb7c752000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffba4ab0000 - 0x00007ffba4b29000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffb661e0000 - 0x00007ffb66205000 	C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\jre\17.0.10-win32-x86_64\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\jre\17.0.10-win32-x86_64\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3235_none_270f74e173860f98;C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\jre\17.0.10-win32-x86_64\bin\server
+
+VM Arguments:
+jvm_args: --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED -Dplugin.dir=C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\server\..\..\vscjava.vscode-gradle-3.13.5\server\plugins 
+java_command: com.microsoft.java.bs.core.Launcher
+java_class_path (initial): C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\server\..\..\vscjava.vscode-gradle-3.13.5\server\server.jar;C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\server\..\..\vscjava.vscode-gradle-3.13.5\server\runtime\bsp4j-2.1.0-M4.jar;C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\server\..\..\vscjava.vscode-gradle-3.13.5\server\runtime\checker-qual-3.5.0.jar;C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\server\..\..\vscjava.vscode-gradle-3.13.5\server\runtime\commons-lang3-3.13.0.jar;C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\server\..\..\vscjava.vscode-gradle-3.13.5\server\runtime\error_prone_annotations-2.3.4.jar;C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\server\..\..\vscjava.vscode-gradle-3.13.5\server\runtime\failureaccess-1.0.1.jar;C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\server\..\..\vscjava.vscode-gradle-3.13.5\server\runtime\gradle-tooling-api-8.1.1.jar;C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\server\..\..\vscjava.vscode-gradle-3.13.5\server\runtime\gson-2.9.1.jar;C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\server\..\..\vscjava.vscode-gradle-3.13.5\server\runtime\guava-30.1-jre.jar;C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\server\..\..\vscjava.vscode-gradle-3.13.5\server\runtime\j2objc-annotations-1.3.jar;C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\server\..\..\vscjava.vscode-gradle-3.13.5\server\runtime\jsr305-3.0.2.jar;C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\server\..\..\vscjava.vscode-gradle-3.13.5\server\runtime\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\server\..\..\vscjava.vscode-gradle-3.13.5\server\runtime\model.jar;C:\Users\vanes\.vscode\extensions\redhat.java-1.29.0-win32-x64\server\..\..\vscjava.vscode-gradle-3.13.
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 65011712                                  {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1012924416                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 1012924416                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-18.0.1
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Java\jdk-18.0.1\bin;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\nodejs\;C:\Software\gradle-7.6.4-all\gradle-7.6.4\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\vanes\AppData\Local\Microsoft\WindowsApps;;C:\Users\vanes\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\vanes\AppData\Roaming\npm
+USERNAME=vanes
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 126 Stepping 5, GenuineIntel
+TMP=C:\Users\vanes\AppData\Local\Temp
+TEMP=C:\Users\vanes\AppData\Local\Temp
+
+
+
+Periodic native trim disabled
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.3374)
+OS uptime: 0 days 3:20 hours
+
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 126 stepping 5 microcode 0xc2, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, avx512f, avx512dq, avx512cd, avx512bw, avx512vl, sha, fma, vzeroupper, avx512_vpopcntdq, avx512_vpclmulqdq, avx512_vaes, avx512_vnni, clflush, clflushopt, avx512_vbmi2, avx512_vbmi
+Processor Information for all 4 processors :
+  Max Mhz: 1190, Current Mhz: 1190, Mhz Limit: 1190
+
+Memory: 4k page, system-wide physical 3862M (65M free)
+TotalPageFile size 9173M (AvailPageFile size 50M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 51M, peak: 113M
+
+vm_info: OpenJDK 64-Bit Server VM (17.0.10+7) for windows-amd64 JRE (17.0.10+7), built on Jan 16 2024 23:25:11 by "admin" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.
