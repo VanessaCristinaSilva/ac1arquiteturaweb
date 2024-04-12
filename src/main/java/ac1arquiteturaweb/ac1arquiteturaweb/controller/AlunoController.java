@@ -7,7 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 import ac1arquiteturaweb.ac1arquiteturaweb.modelo.Aluno;
-import ac1arquiteturaweb.ac1arquiteturaweb.services.AlunoService;
+
 
 
 @SpringBootApplication
@@ -15,36 +15,53 @@ import ac1arquiteturaweb.ac1arquiteturaweb.services.AlunoService;
 
 @RequestMapping("/alunos")
 public class AlunoController {
-private final AlunoService alunoService;
-
-    public AlunoController(AlunoService alunoService) {
-        this.alunoService = alunoService;
-    }
+private List<Aluno> alunos = new ArrayList<>();
+    private Long nextId = 1L;
 
     @GetMapping
     public List<Aluno> obterAlunos() {
-        return alunoService.obterAlunos();
+        return alunos;
     }
 
     @PostMapping("/add")
     public Aluno criarAluno(@RequestBody Aluno aluno) {
-        return alunoService.criarAluno(aluno);
+        aluno.setId((long) (alunos.size() + 1));
+        alunos.add(aluno);
+        return aluno;
     }
 
     @GetMapping("/{id}")
     public Aluno obterAlunoPorId(@PathVariable Long id) {
-        return alunoService.obterAlunoPorId(id);
+        for (Aluno aluno : alunos) {
+            if (aluno.getId().equals(id)) {
+                return aluno;
+            }
+        }
+        return null;
     }
 
     @PutMapping("/{id}")
     public Aluno atualizarAluno(@PathVariable Long id, @RequestBody 
     Aluno alunoAtualizado) {
-        return alunoService.atualizarAluno(id, alunoAtualizado);
+        Aluno alunoExistente = obterAlunoPorId(id);
+        if (alunoExistente != null) {
+            alunoExistente.setNome(alunoAtualizado.getNome());
+            alunoExistente.setRa(alunoAtualizado.getRa());
+            alunoExistente.setCurso(alunoAtualizado.getCurso());
+            alunoExistente.setIdade(alunoAtualizado.getIdade());
+            alunoExistente.setCelular(alunoAtualizado.getCelular());
+        }
+        return alunoExistente;
     }
 
     @DeleteMapping("/{id}")
     public String deletarAluno(@PathVariable Long id) {
-        return alunoService.deletarAluno(id);
+        for (int i = 0; i < alunos.size(); i++) {
+            if (alunos.get(i).getId().equals(id)) {
+                alunos.remove(i);
+                return "Aluno removido com sucesso.";
+            }
+        }
+        return "Aluno não encontrado";
     }
-
 }
